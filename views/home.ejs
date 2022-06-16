@@ -1,0 +1,37 @@
+<%- include("partials/header"); -%>
+<div class="container container-fluid">
+        <p> <%=Content1%> </p>
+        <p> <%=Content2%> </p>
+        <form action="/" method="POST">
+                <button class="btn btn-primary">Create Post</button>
+        </form>
+</div>
+
+<div class="container">
+        <h1 class="post-heading">Demo</h1>
+        
+        <div class="Demo">
+                <h2 class="green"> stringstream in C++ </h2>
+                <p> A stringstream associates a string object with a stream allowing you to read from the string as if it were a stream (like cin). To use stringstream, we need to include sstream header file. The stringstream class is extremely useful in parsing input.  </p>
+                <h6>Basic methods are:</h6>
+                <ol type="1">
+                        <li><h6>clear()</h6>- To clear the stream.</li>
+                        <li><h6>str()</h6>To get and set string object whose content is present in the stream.</li>
+                        <li><h6>operator &lt;&lt;</h6>- Add a string to the stringstream object. </li>
+                        <li><h6>operator &gt;&gt;</h6>- Read something from the stringstream object.</li>
+                </ol>
+        </div>
+        <form action="/" method="POST">
+                <button class="btn btn-primary">Let's make a new post</button>
+        </form>
+        <h1 class="post-heading">Posts</h1>
+        <% posts.forEach(function(i){ %>
+        <h2 class="green"> <%= i.title %> </h2>
+        <p> <%= i.content.substring(0, 230) + "..." %> <a href="/posts/<%=i._id%>"> Read More </a> </p>
+        <% }); %>
+</div>
+<div class="container">
+        <p class="info">To search any post :- current-URL/posts/post-name &nbsp;&nbsp;&nbsp; eg. http://localhost:3000/posts/Strings-in-c++</p>
+</div>
+
+<%- include("partials/footer"); -%>
