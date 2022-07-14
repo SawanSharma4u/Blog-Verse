@@ -1,16 +1,20 @@
-<%- include("partials/header"); -%>
-<div class="container width container-fluid">
-    <h1> Compose </h1>
+<%- include("./partials/header"); -%>
+
+
+<div class="container width container-fluid ml mr">
+    <h2> Compose Your Blog Here </h2>
     <form action="/compose" method="POST">
-        <div class="form-group">
-            <label for="postTitle">Title</label>
-            <input class="form-control" id="postTitle" type="text" name="postTitle">
+        <div class="form-group mt-5">
+            <label for="postTitle"><h6>Title</h6></label>
+            <input class="form-control" id="postTitle" type="text" name="postTitle" placeholder="Enter title" required>
             <br>
-            <label for="postBody">Post</label>
-            <textarea class="form-control" id="postBody" name="postContent" cols="40" rows="5"></textarea>
+            <label for="postBody"><h6>Post</h6></label>
+            <textarea class="form-control" id="postBody" name="postContent" cols="40" rows="5" placeholder="Enter content here" required></textarea>
         </div>
         <br>
-        <button class="btn btn-primary" type="submit" name="publish">Post</button>
+        <button class="btn btn-lg btn-primary mt-5" type="submit" name="publish">Compose</button>
     </form>
 </div>
-<%- include("partials/footer"); -%>
+
+
+<%- include("./partials/footer"); -%>

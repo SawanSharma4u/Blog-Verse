@@ -1,37 +1,27 @@
 <%- include("partials/header"); -%>
-<div class="container container-fluid">
+<div class="container container-fluid ml mr">
         <p> <%=Content1%> </p>
         <p> <%=Content2%> </p>
         <form action="/" method="POST">
-                <button class="btn btn-primary">Create Post</button>
+                <button class="btn btn-primary">Write a blog</button>
         </form>
 </div>
 
-<div class="container">
-        <h1 class="post-heading">Demo</h1>
-        
-        <div class="Demo">
-                <h2 class="green"> stringstream in C++ </h2>
-                <p> A stringstream associates a string object with a stream allowing you to read from the string as if it were a stream (like cin). To use stringstream, we need to include sstream header file. The stringstream class is extremely useful in parsing input.  </p>
-                <h6>Basic methods are:</h6>
-                <ol type="1">
-                        <li><h6>clear()</h6>- To clear the stream.</li>
-                        <li><h6>str()</h6>To get and set string object whose content is present in the stream.</li>
-                        <li><h6>operator &lt;&lt;</h6>- Add a string to the stringstream object. </li>
-                        <li><h6>operator &gt;&gt;</h6>- Read something from the stringstream object.</li>
-                </ol>
-        </div>
-        <form action="/" method="POST">
-                <button class="btn btn-primary">Let's make a new post</button>
-        </form>
-        <h1 class="post-heading">Posts</h1>
-        <% posts.forEach(function(i){ %>
-        <h2 class="green"> <%= i.title %> </h2>
-        <p> <%= i.content.substring(0, 230) + "..." %> <a href="/posts/<%=i._id%>"> Read More </a> </p>
+<div class="container ml mr">
+        <h1 class="post-heading">Blogs</h1>
+        <% posts.reverse() %>
+        <% posts.forEach(blog => { %>
+                <div class="card mt-3">
+                        <div class="card-body">
+                                <h5 class="card-title green"> <%= blog.title %> </h5>
+                                <p class="card-text"> <%= blog.content.substring(0, 100) + "..." %> <a href="/posts/<%=blog._id%>"> Read More </a></p>
+                                <p class="text-muted">Published on: <%= blog.postedAt %> </p>
+                                <a href="/posts/<%=blog._id%>" class="post-btn btn btn-sm btn-success"> Read More </a> 
+                                <a href="/delete/<%=blog._id%>" class="post-btn btn btn-sm btn-danger"> Delete </a>
+                                <a href="/edit/<%=blog._id%>" class="post-btn btn btn-sm btn-primary"> Edit </a>
+                        </div>
+                </div>
         <% }); %>
-</div>
-<div class="container">
-        <p class="info">To search any post :- current-URL/posts/post-name &nbsp;&nbsp;&nbsp; eg. http://localhost:3000/posts/Strings-in-c++</p>
 </div>
 
 <%- include("partials/footer"); -%>

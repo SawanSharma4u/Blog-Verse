@@ -1,0 +1,56 @@
+<%- include("partials/header"); -%>
+    <section>
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100 mt-5">
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 px-4 py-4" style="border: 1px solid black;">
+            <h2 class="fw-bold text-center">Create your account</h2>
+            <form class="px-4 py-4" action="/register" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="FName" id="form3Example1" class="form-control" required/>
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" name="LName" id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" name="username" id="form1Example13" class="form-control form-control-lg"  required/>
+                <label class="form-label" for="form1Example13">Email address</label>
+              </div>
+    
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" name="password" id="form1Example23" class="form-control form-control-lg" />
+                <label class="form-label" for="form1Example23">Password</label>
+              </div>
+              <div class="text-center">
+                <p>Already have an account? <a href="Login" class="link-info">Login here</a></p>
+                <button class="btn btn-dark btn-block text-white mt-4" style="width: 50%;" type="submit">Register</button>
+              </div>
+            </form>
+            <div class="text-center divider d-flex align-items-center">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+            <div class="text-center mt-4">
+              <a class="btn btn-danger btn-block px-5" href="/auth/google" role="button">
+                <i class="fab fa-google"></i>
+                Sign Up with Google
+              </a>
+            </div>
+          </div>
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+              class="img-fluid" alt="Phone image">
+          </div>
+        </div>
+      </div>
+    </section>
+<%- include("partials/footer"); -%>
+ 
